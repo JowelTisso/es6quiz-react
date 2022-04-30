@@ -1,51 +1,147 @@
-.App {
+/* Import */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+/* variables */
+/* colors */
+:root {
+  --primary-color: #facc15;
+  --secondary-color: #4ade80;
+  --danger-color: #ef4444;
+  --txt-color: #f0fdf4;
+  --bg-color: #1e293b;
+  --bg-color-2: #2a2c33;
+
+  /* shades */
+  --primary-color-light: #fde047;
+  --primary-color-dark: #eab308;
+  --secondary-color-light: #86efac;
+  --secondary-color-dark: #22c55e;
+  --bg-color-light: #475569;
+  --bg-color-dark: #0f172a;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  color: var(--txt-color);
+}
+
+/* base styles */
+body {
+  background-color: var(--bg-color);
+}
+
+/* container */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+}
+
+/* hero */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  font-size: 5rem;
+  color: var(--primary-color);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.intro-txt {
+  padding: 0 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*button  */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 80%;
+  margin: 2rem auto;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  line-height: 3rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color);
+  color: var(--txt-color);
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  line-height: 3rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color-dark);
+}
+
+/* Utils */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.pri-color {
+  color: var(--primary-color);
+}
+
+.sec-color {
+  color: var(--secondary-color);
+}
+
+.t4 {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* large screen styles */
+
+@media screen and (min-width: 600px) {
+  .btn-container {
+    width: 60%;
   }
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+@media screen and (min-width: 900px) {
+  .btn-container {
+    width: 50%;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
-}
-
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
+@media screen and (min-width: 1200px) {
+  .btn-container {
+    width: 40%;
+  }
 }
