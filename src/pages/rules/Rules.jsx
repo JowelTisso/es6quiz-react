@@ -27,7 +27,7 @@ const Rules = () => {
         </div>
         <div className="footer-nav flex-center mg-top-4x">
           <IoChevronBack />
-          <Link className="t4" to={"/"}>
+          <Link className="t4 no-deco" to={"/"}>
             Home
           </Link>
         </div>

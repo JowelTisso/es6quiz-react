@@ -16,7 +16,7 @@ const Home = () => {
         <Link to={"/rules"} className="btn btn-secondary no-deco txt-center">
           RULES
         </Link>
-        <Link to={"/rules"} className="btn btn-primary no-deco txt-center">
+        <Link to={"/category"} className="btn btn-primary no-deco txt-center">
           START
         </Link>
       </div>
