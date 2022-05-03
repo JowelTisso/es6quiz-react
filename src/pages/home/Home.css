@@ -1,0 +1,77 @@
+/* container */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+}
+
+/* hero */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  font-size: 5rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.intro-txt {
+  padding: 0 1rem;
+}
+
+/*button  */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 80%;
+  margin: 2rem auto;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  line-height: 3rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color);
+  color: var(--txt-color);
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  line-height: 3rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color-dark);
+}
+
+/* large screen styles */
+
+@media screen and (min-width: 600px) {
+  .btn-container {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .btn-container {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .btn-container {
+    width: 40%;
+  }
+}

@@ -1,0 +1,34 @@
+/* container */
+.rules-container {
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.rules {
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-nav {
+  justify-content: flex-start;
+}
+
+/* icon */
+.icon {
+  font-size: 1.5rem;
+}
+
+/* larger screen styles */
+@media screen and (min-width: 450px) {
+  .rules-container {
+    width: 25rem;
+  }
+}
+@media screen and (min-width: 650px) {
+  .rules-container {
+    width: fit-content;
+    max-width: 40rem;
+  }
+}

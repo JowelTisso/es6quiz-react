@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
@@ -12,18 +13,12 @@ const Home = () => {
         </p>
       </div>
       <div className="btn-container">
-        <a
-          href="/screen/rules/rules.html"
-          className="btn btn-secondary no-deco txt-center"
-        >
+        <Link to={"/rules"} className="btn btn-secondary no-deco txt-center">
           RULES
-        </a>
-        <a
-          href="/screen/category/category.html"
-          className="btn btn-primary no-deco txt-center"
-        >
+        </Link>
+        <Link to={"/rules"} className="btn btn-primary no-deco txt-center">
           START
-        </a>
+        </Link>
       </div>
     </div>
   );
