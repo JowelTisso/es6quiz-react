@@ -8,7 +8,32 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "TV Show",
-    description: "Quizes based on TV shows",
+    categoryName: "Arrow function",
+    description: "() => {}",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Destructuring",
+    description: "{name, className}",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Variables",
+    description: "let/const/var",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Rest parameters",
+    description: "...rest",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Template literals",
+    description: "${name}",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Temporal Dead Zone",
+    description: "TDZ",
   },
 ];
