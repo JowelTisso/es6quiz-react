@@ -5,9 +5,9 @@ const Card = ({ categoryName, description }) => {
   return (
     <Link to={"/quiz"} className="category-card flex-center pointer no-deco">
       <div className="category-logo flex-center">
-        <p className="t4">{description}</p>
+        <p className="card-txt">{description}</p>
       </div>
-      <p className="t4">{categoryName}</p>
+      <p className="card-txt">{categoryName}</p>
     </Link>
   );
 };

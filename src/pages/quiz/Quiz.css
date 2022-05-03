@@ -15,11 +15,11 @@
   gap: 1rem;
 }
 
-.btn-primary {
+.btn-primary-quiz {
   background-color: var(--bg-color-light);
 }
 
-.btn-primary:hover {
+.btn-primary-quiz:hover {
   background-color: var(--primary-color);
 }
 

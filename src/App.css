@@ -29,6 +29,11 @@
   color: var(--txt-color);
 }
 
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
 /* base styles */
 body {
   background-color: var(--bg-color);

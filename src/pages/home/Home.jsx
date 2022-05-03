@@ -13,10 +13,16 @@ const Home = () => {
         </p>
       </div>
       <div className="btn-container">
-        <Link to={"/rules"} className="btn btn-secondary no-deco txt-center">
+        <Link
+          to={"/rules"}
+          className="btn btn-secondary-home no-deco txt-center"
+        >
           RULES
         </Link>
-        <Link to={"/category"} className="btn btn-primary no-deco txt-center">
+        <Link
+          to={"/category"}
+          className="btn btn-primary-home no-deco txt-center"
+        >
           START
         </Link>
       </div>

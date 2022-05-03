@@ -25,7 +25,7 @@ const Rules = () => {
             two wrong answer.
           </p>
         </div>
-        <div className="quiz-footer-nav flex-center mg-top-4x">
+        <div className="rules-footer-nav flex-center mg-top-4x">
           <IoChevronBack />
           <Link className="t4 no-deco" to={"/"}>
             Home

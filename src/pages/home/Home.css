@@ -35,24 +35,24 @@
   justify-content: center;
 }
 
-.btn-secondary {
+.btn-secondary-home {
   background-color: transparent;
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
   line-height: 3rem;
 }
 
-.btn-secondary:hover {
+.btn-secondary-home:hover {
   background-color: var(--secondary-color);
   color: var(--txt-color);
 }
 
-.btn-primary {
+.btn-primary-home {
   background-color: var(--secondary-color);
   line-height: 3rem;
 }
 
-.btn-primary:hover {
+.btn-primary-home:hover {
   background-color: var(--secondary-color-dark);
 }
 

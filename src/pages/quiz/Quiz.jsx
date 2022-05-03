@@ -21,10 +21,10 @@ const Quiz = () => {
           ></iframe>
         </div>
         <div className="option-container mg-top-3x">
-          <button className="btn btn-primary t4">42</button>
-          <button className="btn btn-primary t4">100</button>
-          <button className="btn btn-primary t4">undefined</button>
-          <button className="btn btn-primary t4">reference error</button>
+          <button className="btn btn-primary-quiz t4">42</button>
+          <button className="btn btn-primary-quiz t4">100</button>
+          <button className="btn btn-primary-quiz t4">undefined</button>
+          <button className="btn btn-primary-quiz t4">reference error</button>
         </div>
         <div className="quiz-footer-nav flex-center mg-top-2x">
           <div className="flex-center">
