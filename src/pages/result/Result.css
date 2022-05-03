@@ -1,0 +1,13 @@
+/* container */
+.result-container {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+/* option */
+.option-correct {
+  background-color: var(--secondary-color);
+}
+
+.option-wrong {
+  background-color: var(--danger-color);
+}
