@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import { GET } from "../../utils/axiosHelper";
 import * as Constant from "../../utils/Constants";
 import Card from "./component/Card";
+import Spinner from "../../components/spinner/Spinner";
 
 const Category = () => {
   const [categories, setCategories] = useState([]);
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -15,12 +17,18 @@ const Category = () => {
         const { status, data } = await GET(Constant.CATEGORIES_API);
         if (status === 200 || status || 201) {
           setCategories(data.categories);
+          setLoading(false);
         }
       } catch (err) {
+        setLoading(false);
         console.log(err);
       }
     })();
   }, []);
+
+  if (loading) {
+    return <Spinner loading={loading} />;
+  }
 
   return (
     <div>
