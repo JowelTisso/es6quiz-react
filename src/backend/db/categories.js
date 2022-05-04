@@ -8,32 +8,42 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Arrow function",
-    description: "() => {}",
+    categoryName: "NeoQuiz cycle 1 (Set 1)",
+    description: "Set 1",
   },
   {
     _id: uuid(),
-    categoryName: "Destructuring",
-    description: "{name, className}",
+    categoryName: "NeoQuiz cycle 1 (Set 2)",
+    description: "Set 2",
   },
   {
     _id: uuid(),
-    categoryName: "Variables",
-    description: "let/const/var",
+    categoryName: "NeoQuiz cycle 2 (Set 3)",
+    description: "Set 3",
   },
   {
     _id: uuid(),
-    categoryName: "Rest parameters",
-    description: "...rest",
+    categoryName: "NeoQuiz cycle 2 (Set 4)",
+    description: "Set 4",
   },
   {
     _id: uuid(),
-    categoryName: "Template literals",
-    description: "${name}",
+    categoryName: "NeoQuiz cycle 3 (Set 5)",
+    description: "Set 5",
   },
   {
     _id: uuid(),
-    categoryName: "Temporal Dead Zone",
-    description: "TDZ",
+    categoryName: "NeoQuiz cycle 3 (Set 6)",
+    description: "Set 6",
+  },
+  {
+    _id: uuid(),
+    categoryName: "NeoQuiz cycle 4 (Set 7)",
+    description: "Set 7",
+  },
+  {
+    _id: uuid(),
+    categoryName: "NeoQuiz cycle 4 (Set 8)",
+    description: "Set 8",
   },
 ];

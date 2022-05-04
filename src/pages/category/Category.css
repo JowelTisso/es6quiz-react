@@ -32,6 +32,12 @@
 .card-txt {
   font-size: 1rem;
 }
+.category-footer-nav {
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* larger screen styles */
 @media screen and (min-width: 450px) {
@@ -46,7 +52,18 @@
 @media screen and (min-width: 650px) {
   .category-container {
     width: fit-content;
-    max-width: 40rem;
+    max-width: 55rem;
     gap: 2rem;
+  }
+  .category-footer-nav {
+    display: block;
+    max-width: 55rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .category-logo {
+    width: 11rem;
+    height: 10rem;
   }
 }

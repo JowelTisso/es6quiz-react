@@ -41,12 +41,12 @@ const Category = () => {
             description={category.description}
           />
         ))}
-        <div className="footer-nav flex-center mg-top-2x">
-          <IoChevronBack />
-          <Link to={"/"} className="t4 no-deco">
-            Back
-          </Link>
-        </div>
+      </div>
+      <div className="category-footer-nav flex-center mg-top-3x">
+        <IoChevronBack />
+        <Link to={"/"} className="t4 no-deco">
+          Back
+        </Link>
       </div>
     </div>
   );

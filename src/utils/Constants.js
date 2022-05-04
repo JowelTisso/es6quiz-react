@@ -7,12 +7,8 @@ export const USER_TOKEN = "userToken";
 // Api
 export const LOG_IN_API = "/api/auth/login";
 export const SIGN_UP_API = "/api/auth/signup";
-export const VIDEOS_API = "/api/videos";
+export const ALL_QUIZ_API = "/api/quizzes";
 export const CATEGORIES_API = "/api/categories";
-export const LIKES_API = "/api/user/likes";
-export const WATCHLATER_API = "/api/user/watchlater";
-export const PLAYLIST_API = "/api/user/playlists";
-export const HISTORY_API = "/api/user/history";
 
 // Video
 export const CHANGE_GENRE = "CHANGE_GENRE";
