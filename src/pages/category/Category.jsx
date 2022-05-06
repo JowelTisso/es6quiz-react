@@ -3,7 +3,7 @@ import "./Category.css";
 import { IoChevronBack } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { GET } from "../../utils/axiosHelper";
-import * as Constant from "../../utils/Constants";
+import * as Constants from "../../utils/Constants";
 import Card from "./component/Card";
 import Spinner from "../../components/spinner/Spinner";
 
@@ -14,7 +14,7 @@ const Category = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { status, data } = await GET(Constant.CATEGORIES_API);
+        const { status, data } = await GET(Constants.CATEGORIES_API);
         if (status === 200 || status || 201) {
           setCategories(data.categories);
           setLoading(false);
