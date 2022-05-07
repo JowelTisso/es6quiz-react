@@ -6,7 +6,7 @@ import { useQuiz } from "./context/provider/QuizProvider";
 import { GET } from "./utils/axiosHelper";
 
 function App() {
-  const { quizDispatch } = useQuiz();
+  const { quizState, quizDispatch } = useQuiz();
 
   useEffect(() => {
     (async () => {

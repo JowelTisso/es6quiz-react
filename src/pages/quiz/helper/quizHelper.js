@@ -31,3 +31,29 @@ export const prevQuestion = (mcqs, activeMcq, quizDispatch) => {
     });
   }
 };
+
+/**
+ *
+ * @param {Array} mcqs The currect category mcqs
+ * @param {Object} activeMcq The active question
+ * @param {function} quizDispatch the dispatch function for updating quiz
+ */
+export const addAnswer = (activeMcq, quizState, quizDispatch) => {
+  const quizIndex = quizState.answeredQuiz.findIndex(
+    (mcq) => mcq._id === activeMcq._id
+  );
+  if (quizIndex > -1) {
+    const filteredQuiz = quizState.answeredQuiz.filter(
+      (mcq) => mcq._id !== activeMcq._id
+    );
+    quizDispatch({
+      type: Constants.ANSWERED_QUIZ,
+      payload: { answeredQuiz: [...filteredQuiz, activeMcq] },
+    });
+  } else {
+    quizDispatch({
+      type: Constants.ANSWERED_QUIZ,
+      payload: { answeredQuiz: [...quizState.answeredQuiz, activeMcq] },
+    });
+  }
+};

@@ -23,6 +23,10 @@
   background-color: var(--primary-color);
 }
 
+.selectedAnswer {
+  background-color: var(--primary-color);
+}
+
 /* footer nav */
 .quiz-footer-nav {
   justify-content: space-between;

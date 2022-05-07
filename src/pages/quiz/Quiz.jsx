@@ -2,19 +2,30 @@ import "./Quiz.css";
 import React, { useEffect, useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import Spinner from "../../components/spinner/Spinner";
 import { useQuiz } from "../../context/provider/QuizProvider";
-import { nextQuestion, prevQuestion } from "./helper/quizHelper";
+import { addAnswer, nextQuestion, prevQuestion } from "./helper/quizHelper";
 
 const Quiz = () => {
   const { quizState, quizDispatch } = useQuiz();
   const { activeMcq } = quizState;
+
+  const noOfQuestion = quizState?.selectedCategoryQuiz?.mcqs?.length;
+  const totalScore = quizState?.selectedCategoryQuiz?.totalScore;
+
+  const currentQuestionNo = quizState?.selectedCategoryQuiz?.mcqs?.findIndex(
+    (question) => question === activeMcq
+  );
 
   const nextHandler = () =>
     nextQuestion(quizState.selectedCategoryQuiz.mcqs, activeMcq, quizDispatch);
 
   const prevHandler = () =>
     prevQuestion(quizState.selectedCategoryQuiz.mcqs, activeMcq, quizDispatch);
+
+  const selectHandler = (option) => {
+    activeMcq.submittedAnswer = option;
+    addAnswer(activeMcq, quizState, quizDispatch);
+  };
 
   return (
     <div>
@@ -25,8 +36,10 @@ const Quiz = () => {
       <h1 className="h3 txt-center mg-top-2x pri-color">Arrow functions</h1>
       <main className="quiz-container">
         <div className="quiz-header">
-          <p className="t4 question-count">Question: 1/5</p>
-          {/* <p className="t4">Score : 0</p> */}
+          <p className="t4 question-count">
+            Question: {currentQuestionNo + 1}/{noOfQuestion}
+          </p>
+          <p className="t4">Total Score : {totalScore}</p>
         </div>
         <p className="t4 mg-top-2x">{activeMcq?.question}</p>
         {activeMcq?.code_snippet && (
@@ -40,7 +53,13 @@ const Quiz = () => {
         )}
         <div className="option-container mg-top-3x">
           {activeMcq?.options?.map((option) => (
-            <button className="btn btn-primary-quiz t4" key={option}>
+            <button
+              className={`btn btn-primary-quiz t4   ${
+                activeMcq?.submittedAnswer === option && "selectedAnswer"
+              }`}
+              key={option}
+              onClick={() => selectHandler(option)}
+            >
               {option}
             </button>
           ))}
@@ -53,9 +72,9 @@ const Quiz = () => {
             </button>
           </div>
           <div className="flex-center">
-            <button to={"/result"} className="t4 no-deco btn-link">
+            <Link to={"/result"} className="t4 no-deco btn-link">
               Submit
-            </button>
+            </Link>
           </div>
           <div className="flex-center">
             <button className="t4 no-deco btn-link" onClick={nextHandler}>
