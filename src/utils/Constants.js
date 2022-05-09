@@ -10,11 +10,8 @@ export const SIGN_UP_API = "/api/auth/signup";
 export const ALL_QUIZ_API = "/api/quizzes";
 export const CATEGORIES_API = "/api/categories";
 
-// Video
-export const CHANGE_GENRE = "CHANGE_GENRE";
-export const UPDATE_VIDEO_LIST = "UPDATE_VIDEO_LIST";
-export const UPDATE_LIKED_VIDEOS = "UPDATE_LIKED_VIDEO_LIST";
-export const UPDATE_WATCH_LATER = "UPDATE_WATCH_LATER_LIST";
-export const UPDATE_PLAYLIST = "UPDATE_PLAYLIST";
-export const UPDATE_HISTORY = "UPDATE_HISTORY";
-export const UPDATE_CATEGORIES = "UPDATE_CATEGORIES";
+// Quiz
+export const ALL_QUIZ = "ALL_QUIZ";
+export const SELECTED_CATEGORY = "SELECTED_CATEGORY";
+export const ACTIVE_MCQ = "ACTIVE_MCQ";
+export const ANSWERED_QUIZ = "ANSWERED_QUIZ";
