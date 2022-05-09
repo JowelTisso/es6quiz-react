@@ -35,11 +35,7 @@ const Category = () => {
       <h1 className="h2 txt-center mg-top-2x pri-color">CATEGORY</h1>
       <div className="category-container flex-center mg-top-3x">
         {categories.map((category) => (
-          <Card
-            key={category._id}
-            categoryName={category.categoryName}
-            description={category.description}
-          />
+          <Card key={category._id} {...category} />
         ))}
       </div>
       <div className="category-footer-nav flex-center mg-top-3x">

@@ -22,7 +22,7 @@
 }
 
 .category-logo:hover {
-  background-color: var(--bg-color-dark);
+  opacity: 0.8;
 }
 
 /* icon */
