@@ -21,6 +21,7 @@
 
 .btn-primary-quiz:hover {
   background-color: var(--primary-color);
+  transition: all 0.2s ease;
 }
 
 .selectedAnswer {
