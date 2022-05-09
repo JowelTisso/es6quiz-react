@@ -15,3 +15,4 @@ export const ALL_QUIZ = "ALL_QUIZ";
 export const SELECTED_CATEGORY = "SELECTED_CATEGORY";
 export const ACTIVE_MCQ = "ACTIVE_MCQ";
 export const ANSWERED_QUIZ = "ANSWERED_QUIZ";
+export const RESET_QUIZ = "RESET_QUIZ";

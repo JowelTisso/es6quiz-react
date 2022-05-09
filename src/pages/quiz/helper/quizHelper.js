@@ -57,3 +57,9 @@ export const addAnswer = (activeMcq, quizState, quizDispatch) => {
     });
   }
 };
+
+export const resetQuiz = (quizDispatch) => {
+  quizDispatch({
+    type: Constants.RESET_QUIZ,
+  });
+};

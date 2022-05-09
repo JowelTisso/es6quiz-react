@@ -1,13 +1,21 @@
 import "./Quiz.css";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useQuiz } from "../../context/provider/QuizProvider";
-import { addAnswer, nextQuestion, prevQuestion } from "./helper/quizHelper";
+import {
+  addAnswer,
+  nextQuestion,
+  prevQuestion,
+  resetQuiz,
+} from "./helper/quizHelper";
+import { callToast } from "../../components/toast/Toast";
 
 const Quiz = () => {
   const { quizState, quizDispatch } = useQuiz();
   const { activeMcq } = quizState;
+
+  const navigate = useNavigate();
 
   const noOfQuestion = quizState?.selectedCategoryQuiz?.mcqs?.length;
   const totalScore = quizState?.selectedCategoryQuiz?.totalScore;
@@ -27,9 +35,21 @@ const Quiz = () => {
     addAnswer(activeMcq, quizState, quizDispatch);
   };
 
+  const submitHandler = () => {
+    if (quizState.answeredQuiz.length > 0) {
+      navigate("/result");
+    } else {
+      callToast("Select atleast one answer!", false);
+    }
+  };
+
   return (
     <div>
-      <Link to={"/category"} className="btn-link btn-link-secondary no-deco">
+      <Link
+        to={"/category"}
+        className="btn-link btn-link-secondary no-deco"
+        onClick={resetQuiz}
+      >
         Quit
       </Link>
 
@@ -72,9 +92,9 @@ const Quiz = () => {
             </button>
           </div>
           <div className="flex-center">
-            <Link to={"/result"} className="t4 no-deco btn-link">
+            <button className="t4 no-deco btn-link" onClick={submitHandler}>
               Submit
-            </Link>
+            </button>
           </div>
           <div className="flex-center">
             <button className="t4 no-deco btn-link" onClick={nextHandler}>

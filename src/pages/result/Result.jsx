@@ -1,48 +1,113 @@
 import "./Result.css";
-import React from "react";
+import React, { useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useQuiz } from "../../context/provider/QuizProvider";
+import { resetQuiz } from "../quiz/helper/quizHelper";
 
 const Result = () => {
+  const { quizState } = useQuiz();
+
+  const [activeMcq, setActiveMcq] = useState(quizState.answeredQuiz[0]);
+
+  const noOfQuestion = quizState?.answeredQuiz?.length;
+  const totalScore = quizState?.selectedCategoryQuiz?.totalScore;
+  const currentQuestionNo = quizState?.answeredQuiz?.findIndex(
+    (question) => question === activeMcq
+  );
+
+  const nextHandler = () => {
+    const index = quizState.answeredQuiz?.findIndex((mcq) => mcq === activeMcq);
+    if (index > -1 && index < quizState.answeredQuiz.length - 1) {
+      setActiveMcq(quizState.answeredQuiz[index + 1]);
+    }
+  };
+
+  const prevHandler = () => {
+    const index = quizState.answeredQuiz?.findIndex((mcq) => mcq === activeMcq);
+    if (index > -1 && index > 0) {
+      setActiveMcq(quizState.answeredQuiz[index - 1]);
+    }
+  };
+
+  const checkCorrectAnswers = () => {
+    return quizState.answeredQuiz?.reduce((acc, curr) => {
+      if (curr.submittedAnswer === curr.answer) {
+        acc += 1;
+      }
+      return acc;
+    }, 0);
+  };
+
+  let wrongAnswer = false;
+  const optionColor = (option) => {
+    let optionStyle = "";
+    if (activeMcq?.submittedAnswer === option) {
+      if (option === activeMcq?.answer) {
+        optionStyle += "option-correct" + " ";
+      } else {
+        optionStyle += "option-wrong" + " ";
+        wrongAnswer = true;
+      }
+    }
+    if (wrongAnswer && activeMcq?.answer === option) {
+      optionStyle += "option-correct" + " ";
+    }
+    return optionStyle;
+  };
+
   return (
     <div>
+      <Link
+        to={"/category"}
+        className="btn-link btn-link-secondary no-deco"
+        onClick={resetQuiz}
+      >
+        Quit
+      </Link>
       <h1 className="h3 txt-center mg-top-2x pri-color">Result</h1>
       <main className="quiz-container">
         <div className="quiz-header">
-          <p className="t4 question-count">Question: 1/5</p>
-          <p className="t4">Final Score : 10/20</p>
+          <p className="t4 question-count">
+            Question: {currentQuestionNo + 1}/{noOfQuestion}
+          </p>
+          <p className="t4">
+            Final Score : {checkCorrectAnswers()}/{totalScore}
+          </p>
         </div>
         <p className="t4 mg-top-2x">What will be the output?</p>
-        <div className="mg-top-2x code-snippet">
-          <iframe
-            src={
-              "https://carbon.now.sh/embed?bg=rgba%2847%2C53%2C58%2C1%29&t=one-dark&wt=none&l=auto&width=300&ds=false&dsyoff=20px&dsblur=68px&wc=false&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=159%25&si=false&es=2x&wm=false&code=let%2520a%2520%253D%252042%250A%257B%250A%2520%2520let%2520a%2520%253D%2520100%250A%257D%250Aconsole.log%28a%29"
-            }
-            className="code-frame"
-            sandbox="allow-scripts allow-same-origin"
-          ></iframe>
-        </div>
+        {activeMcq?.code_snippet && (
+          <div className="mg-top-2x code-snippet">
+            <iframe
+              src={activeMcq?.code_snippet}
+              className="code-frame"
+              sandbox="allow-scripts allow-same-origin"
+            ></iframe>
+          </div>
+        )}
         <div className="option-container mg-top-3x">
-          <button className="btn btn-primary-quiz t4 option-correct">42</button>
-          <button className="btn btn-primary-quiz t4">100</button>
-          <button className="btn btn-primary-quiz t4 option-wrong">
-            undefined
-          </button>
-          <button className="btn btn-primary-quiz t4">reference error</button>
+          {activeMcq?.options?.map((option) => (
+            <button
+              className={`btn btn-primary-result t4  ${optionColor(option)}`}
+              key={option}
+            >
+              {option}
+            </button>
+          ))}
         </div>
         <div className="quiz-footer-nav flex-center mg-top-2x">
           <div className="flex-center">
             <IoChevronBack />
-            <Link to={"/category"} className="t4 no-deco">
-              Back
-            </Link>
+            <button className="t4 no-deco btn-link" onClick={prevHandler}>
+              Prev
+            </button>
           </div>
-          {/* <div>
-            <Link to={"/"} className="t4">
+          <div>
+            <button className="t4 no-deco btn-link" onClick={nextHandler}>
               Next
-            </Link>
+            </button>
             <IoChevronForward />
-          </div> */}
+          </div>
         </div>
       </main>
     </div>

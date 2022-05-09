@@ -4,6 +4,11 @@
   padding: 1rem 2rem;
 }
 /* option */
+.btn-primary-result {
+  background-color: var(--bg-color-light);
+  cursor: default;
+}
+
 .option-correct {
   background-color: var(--secondary-color);
 }
