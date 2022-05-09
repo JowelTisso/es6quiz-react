@@ -13,16 +13,8 @@ const Rules = () => {
             from the given option.
           </p>
           <p className="t4 mg-top-2x">
-            <span className="pri-color">2.</span> Complete the quiz in the given
-            time.
-          </p>
-          <p className="t4 mg-top-2x">
-            <span className="pri-color">3.</span> 1 point will be awarded for
+            <span className="pri-color">2.</span> 1 point will be awarded for
             each correct answer.
-          </p>
-          <p className="t4 mg-top-2x">
-            <span className="pri-color">4.</span> 1 point will be deducted for
-            two wrong answer.
           </p>
         </div>
         <div className="rules-footer-nav flex-center mg-top-4x">
