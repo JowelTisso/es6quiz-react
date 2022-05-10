@@ -13,7 +13,7 @@ import { callToast } from "../../components/toast/Toast";
 
 const Quiz = () => {
   const { quizState, quizDispatch } = useQuiz();
-  const { activeMcq } = quizState;
+  const { activeMcq, selectedCategoryQuiz } = quizState;
 
   const navigate = useNavigate();
 
@@ -53,7 +53,9 @@ const Quiz = () => {
         Quit
       </Link>
 
-      <h1 className="h3 txt-center mg-top-2x pri-color">Arrow functions</h1>
+      <h1 className="h3 txt-center mg-top-2x pri-color">
+        {selectedCategoryQuiz?.categoryName}
+      </h1>
       <main className="quiz-container">
         <div className="quiz-header">
           <p className="t4 question-count">

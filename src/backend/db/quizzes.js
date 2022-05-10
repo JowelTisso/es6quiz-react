@@ -76,7 +76,7 @@ export const quizzes = [
         answer: "SyntaxError: Identifier 'obj' has already been declared",
       },
     ],
-    catergoryName: "NeoQuiz cycle 1 (Set 1)",
+    categoryName: "NeoQuiz cycle 1 (Set 1)",
   },
   {
     _id: uuid(),
@@ -149,7 +149,7 @@ export const quizzes = [
         answer: "1",
       },
     ],
-    catergoryName: "NeoQuiz cycle 1 (Set 2)",
+    categoryName: "NeoQuiz cycle 1 (Set 2)",
   },
   {
     _id: uuid(),
@@ -207,7 +207,7 @@ export const quizzes = [
         answer: "blue",
       },
     ],
-    catergoryName: "NeoQuiz cycle 2 (Set 3)",
+    categoryName: "NeoQuiz cycle 2 (Set 3)",
   },
   {
     _id: uuid(),
@@ -275,7 +275,7 @@ export const quizzes = [
         answer: "Throw an error",
       },
     ],
-    catergoryName: "NeoQuiz cycle 2 (Set 4)",
+    categoryName: "NeoQuiz cycle 2 (Set 4)",
   },
   {
     _id: uuid(),
@@ -348,7 +348,7 @@ export const quizzes = [
           "The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string.",
       },
     ],
-    catergoryName: "NeoQuiz cycle 3 (Set 5)",
+    categoryName: "NeoQuiz cycle 3 (Set 5)",
   },
   {
     _id: uuid(),
@@ -416,7 +416,7 @@ export const quizzes = [
           "It is used to navigate to a particular URL and the view is re-rendered without a browser refresh.",
       },
     ],
-    catergoryName: "NeoQuiz cycle 3 (Set 6)",
+    categoryName: "NeoQuiz cycle 3 (Set 6)",
   },
   {
     _id: uuid(),
@@ -474,7 +474,7 @@ export const quizzes = [
         answer: "false",
       },
     ],
-    catergoryName: "NeoQuiz cycle 4 (Set 7)",
+    categoryName: "NeoQuiz cycle 4 (Set 7)",
   },
   {
     _id: uuid(),
@@ -527,6 +527,6 @@ export const quizzes = [
         answer: "Joy",
       },
     ],
-    catergoryName: "NeoQuiz cycle 4 (Set 8)",
+    categoryName: "NeoQuiz cycle 4 (Set 8)",
   },
 ];
