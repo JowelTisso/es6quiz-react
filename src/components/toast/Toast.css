@@ -1,0 +1,40 @@
+.toast-container {
+  min-width: 20rem;
+  height: 4rem;
+  border-radius: 5px;
+  background-color: var(--txt-color);
+  padding-left: 1rem;
+}
+
+.toast-msg {
+  flex: 1;
+  text-align: center;
+  color: var(--bg-color-dark);
+  font-size: 1rem;
+}
+
+.toast-close:hover {
+  opacity: 0.5;
+}
+
+.error-icon {
+  background-color: var(--toast-err-icon-color);
+  border-radius: 50%;
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+@media screen and (min-width: 650px) {
+  .toast-container {
+    min-width: 25rem;
+    height: 4rem;
+    border-radius: 5px;
+    background-color: var(--txt-color);
+    padding-left: 1rem;
+  }
+
+  .error-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}

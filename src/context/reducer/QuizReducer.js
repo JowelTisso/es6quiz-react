@@ -22,6 +22,13 @@ export const reducer = (state, action) => {
         ...state,
         answeredQuiz: action.payload.answeredQuiz,
       };
+    case Constants.RESET_QUIZ:
+      return {
+        ...state,
+        selectedCategoryQuiz: {},
+        activeMcq: {},
+        answeredQuiz: [],
+      };
     default:
       return state;
   }
