@@ -1,9 +1,9 @@
 import * as Constants from "../../../utils/Constants";
 
-export const setSelectedCategory = (catergoryName, allQuiz, quizDispatch) => {
+export const setSelectedCategory = (categoryName, allQuiz, quizDispatch) => {
   try {
     const selectedCategoryQuiz = allQuiz?.find(
-      (quiz) => quiz.catergoryName === catergoryName
+      (quiz) => quiz.categoryName === categoryName
     );
 
     // Cloning the quiz

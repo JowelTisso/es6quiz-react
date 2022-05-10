@@ -2,6 +2,7 @@ import "./Rules.css";
 import React from "react";
 import { IoChevronBack } from "react-icons/io5";
 import { Link } from "react-router-dom";
+
 const Rules = () => {
   return (
     <div>
