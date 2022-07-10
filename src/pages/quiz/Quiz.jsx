@@ -47,7 +47,7 @@ const Quiz = () => {
     <div>
       <Link
         to={"/category"}
-        className="btn-link btn-link-secondary no-deco"
+        className="btn-link btn-link-secondary no-deco t4"
         onClick={resetQuiz}
       >
         Quit
@@ -98,12 +98,14 @@ const Quiz = () => {
               Submit
             </button>
           </div>
-          <div className="flex-center">
-            <button className="t4 no-deco btn-link" onClick={nextHandler}>
-              Next
-            </button>
-            <IoChevronForward />
-          </div>
+          {currentQuestionNo + 1 < noOfQuestion && (
+            <div className="flex-center btn-next">
+              <button className="t4 no-deco btn-link" onClick={nextHandler}>
+                Next
+              </button>
+              <IoChevronForward />
+            </div>
+          )}
         </div>
       </main>
     </div>
