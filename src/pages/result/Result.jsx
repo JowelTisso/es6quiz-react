@@ -45,12 +45,13 @@ const Result = () => {
     if (activeMcq?.submittedAnswer === option) {
       if (option === activeMcq?.answer) {
         optionStyle += "option-correct" + " ";
+        wrongAnswer = false;
       } else {
         optionStyle += "option-wrong" + " ";
         wrongAnswer = true;
       }
     }
-    if (wrongAnswer && activeMcq?.answer === option) {
+    if (activeMcq?.answer === option) {
       optionStyle += "option-correct" + " ";
     }
     return optionStyle;
@@ -60,7 +61,7 @@ const Result = () => {
     <div>
       <Link
         to={"/category"}
-        className="btn-link btn-link-secondary no-deco"
+        className="btn-link btn-link-secondary no-deco t4"
         onClick={resetQuiz}
       >
         Quit
