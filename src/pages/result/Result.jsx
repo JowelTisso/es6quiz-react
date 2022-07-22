@@ -76,7 +76,7 @@ const Result = () => {
             Final Score : {checkCorrectAnswers()}/{totalScore}
           </p>
         </div>
-        <p className="t4 mg-top-2x">What will be the output?</p>
+        <p className="t4 mg-top-2x">{activeMcq?.question}</p>
         {activeMcq?.code_snippet && (
           <div className="mg-top-2x code-snippet">
             <iframe
